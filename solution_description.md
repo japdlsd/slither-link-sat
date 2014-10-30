@@ -13,4 +13,4 @@ and one wall added as starting.
 How to choose "first" wall? find first cell with number, and find first
 existing wall ("choose north wall, if exists. If doesn't then choose east, If
 both don't exist then choose south…").
-This should suffice.
+-- This should suffice -- It's wrong. We should add time in this "DFS".
