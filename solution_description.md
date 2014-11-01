@@ -34,7 +34,7 @@ reachable(west_wall, 0) <-> starting_west
 ...
 reachable(north_wall, 0) <-> starting_north
 
-// remaining wall
+// remaining walls
 for each wall not in (possible_starts):
   ~reachable(wall, 0)
   reachable(wall, final) <-> exists(wall)
