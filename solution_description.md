@@ -13,8 +13,45 @@ both don't exist then choose south…").
 
 # version 2
 ## Number of walls
+`exactly zero`, `exactly one`, `exactly two`, `exactly three`, `exactly four`
 
+```
+exactly zero:
+~a & ~b & ~c & ~d
+```
 
+```
+at least one:
+(a || b || c || d)
+```
+
+```
+at most one:
+( a -> ~b & ~c & ~d ) & (b -> ~a & ~c & ~d) & ...
+(~a || ~b & ~c & ~d) & (~b || ~a & ~c & ~d) & ...
+(~a || ~b) & (~a || ~c) & (~a || ~d) & ...  
+```
+
+```
+at least two:
+at least one && (a -> (b || c || d)) && (b -> (a || c || d)) && (c -> (a || b || d)) && (d -> (a || b || c))
+```
+
+```
+at most two:
+(a & b -> ~c & ~d) & (a & c -> ~b & ~d) & ...
+(~a || ~b) || (~c & ~d) = (~a || ~b || ~c) & (~a || ~b || ~d)
+```
+
+```
+at most three:
+(~a || ~b || ~c || ~d)
+```
+
+```
+exactly four
+a & b & c & d
+```
 ## Connectivity
 > Each end of each wall is coincident with one other wall.
 
