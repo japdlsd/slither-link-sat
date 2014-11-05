@@ -1,4 +1,4 @@
-# ~~version 1~~ 
+# ~~version 0~~ 
 How to control connectivity of all walls:
 Each wall has a variable `reachable` with following rules:
 ````
@@ -11,7 +11,7 @@ existing wall ("choose north wall, if exists. If doesn't then choose east, If
 both don't exist then choose south…").
 ~~This should suffice~~ It's wrong. We should add time in this "DFS".
 
-# version 2
+# version 1
 ## Number of walls
 `exactly zero`, `exactly one`, `exactly two`, `exactly three`, `exactly four`
 
