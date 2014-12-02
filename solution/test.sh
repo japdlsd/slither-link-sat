@@ -1,3 +1,6 @@
 #!/bin/bash
-echo './main.py < ../tests/01-5x5-normal.in'
-./main.py < ../tests/01-5x5-normal.in
+
+for i in ../tests/*; do
+    echo $i
+    ./main.py < $i
+done
