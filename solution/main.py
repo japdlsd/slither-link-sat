@@ -177,16 +177,11 @@ def visualize(rawOutput, rawInput):
             
     print("activeWalls= ", activeWalls)
 
-    for i in range(numberOfRows):
-        for j in range(numberOfColumns):
-            print("+",{True:"-", False:" "}[wall(i, j, 1) in activeWalls], end="")
-        print("+")
-        for j in range(numberOfColumns):
-            print({True:"|", False:" "}[wall(i,j,0) in activeWalls], grid[i][j] if grid[i][j] >= 0 else " ", end="")
-        print({True:"|", False:" "}[wall(i,numberOfColumns,0) in activeWalls])
-    for j in range(numberOfColumns):
-        print("+",{True:"-", False:" "}[wall(numberOfRows, j, 1) in activeWalls], end="")
-    print("+")
+    for i in range(numberOfRows+1):
+        print("+".join([""] + [{True:"-", False:" "}[wall(i,j,1) in activeWalls] for j in range(numberOfColumns)] + [""]))
+        if i == numberOfRows: break
+        print("".join([ {True:"|", False:" "}[wall(i,j,0) in activeWalls] + {True:str(grid[i][j]), False:" "}[grid[i][j] != -1] for j in range(numberOfColumns)]) +\
+            {True:"|", False:" "}[wall(i,numberOfColumns,0) in activeWalls]) 
 
 def main():
     rawInput = readTaskFromInput()
