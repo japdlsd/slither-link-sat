@@ -2,5 +2,5 @@
 
 for i in ../tests/*; do
     echo $i
-    ./main.py < $i
+    python3 ./main.py < $i
 done
