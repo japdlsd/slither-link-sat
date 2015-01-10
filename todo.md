@@ -9,3 +9,4 @@ TODO
 - [ ] estimate limits of my solution
 - [ ] ? create a parser image -> .txt
 - [ ] try to get partial solution from solver (SAT preprocessing?)
+- [ ] refactor all code -> create module interface
